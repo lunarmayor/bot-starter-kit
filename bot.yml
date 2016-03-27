@@ -1,7 +1,5 @@
 name: Pam
 description: project management bot
-avatar: images/avatar.jpg
-background: images/background.png
 config:
   - name: REDIS_URL
     friendly_name: redis url
