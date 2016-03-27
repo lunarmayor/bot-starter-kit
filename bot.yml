@@ -1,0 +1,15 @@
+name: Pam
+description: project management bot
+avatar: images/avatar.jpg
+background: images/background.png
+config:
+  - name: REDIS_URL
+    friendly_name: redis url
+    info: url for redis db
+    type: secret
+    global: true
+  - name: WIT_TOKEN
+    friendly_name: wit token
+    info: server token for wit.ai
+    global: true
+    type: secret
