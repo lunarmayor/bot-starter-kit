@@ -1,12 +1,21 @@
 import Botkit from 'botkit'
-import mongoStorage from 'botkit-storage-mongo'
+import redisStorage from 'botkit-storage-redis'
+import WitMiddleware from './middleware/WitMiddleware'
+import removeFormatting from './middleware/removeFormatting'
 import BeepBoop from 'beepboop-botkit'
 import dotenv from 'dotenv'
 
+// env variables
 dotenv.config()
 
-const storage = mongoStorage({ mongoUri: process.env.MONGO_URL })
+const storage = redisStorage({})
 const controller = Botkit.slackbot({ storage })
-const beepboop = BeepBoop.start(controller, { debug: true })
+
+// apply middleware
+const { hears, receive } = WitMiddleware(process.env.WIT_TOKEN)
+controller.middleware.receive.use([receive, removeFormatting])
+controller.middleware.hears.use(hears)
+
+const beepboop = BeepBoop.start(controller, { debug: false })
 
 export default controller

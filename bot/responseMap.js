@@ -91,4 +91,4 @@ const responseMap = [
   },
 ]
 
-responseMap.map(({intent, responses}) => hears(intent, responses))
+responseMap.map(({intent, responses}) => hears([{intent: intent, confidence: 0.5}], responses))
