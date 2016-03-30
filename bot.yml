@@ -1,5 +1,5 @@
-name: Pam
-description: project management bot
+name: Ollie
+description: example bot
 config:
   - name: REDIS_URL
     friendly_name: redis url
