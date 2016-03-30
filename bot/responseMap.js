@@ -1,5 +1,6 @@
 import hears from './utilities/hears'
 
+// map for simple responses
 const responseMap = [
   {
     intent: 'hello',
@@ -14,14 +15,6 @@ const responseMap = [
       ':heart::heart::heart:',
       'hello [name]!',
       '[name]!!!!!'
-    ],
-  },
-  {
-    intent: 'beer',
-    responses: [
-      'https://www.ou.org/life/files/Beer-Mug.jpg',
-      ':beers:',
-      'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRw6i68J2T_vV1zCZXqqZpv6cwaoAjQRls5fz6SfZFPX2XjFc71'
     ],
   },
   {
@@ -53,42 +46,6 @@ const responseMap = [
       'I wish I could hug you'
     ],
   },
-  {
-    intent: 'good_morning',
-    responses: [
-      'good morning [name]!',
-      'top of the morning to you',
-      ':coffee::simple_smile:',
-      ':coffee::coffee::coffee: ---> :party_parrot:'
-    ],
-  },
-  {
-    intent: 'good_night',
-    responses: [
-      'good night [name]!',
-      ':zzz::bed: <---- :walking:',
-      '[name] ---> :bed:',
-      '[name]:zzz::zzz::zzz:',
-      ':bed:time?'
-    ],
-  },
-  {
-    intent: 'happy',
-    responses: [
-      ':simple_smile:',
-      'wooo',
-      '[name]!!',
-      ':)'
-    ],
-  },
-  {
-    intent: 'haha',
-    responses: [
-      'I can be funny sometimes',
-      'glad to make you laugh',
-      '[name] gets me',
-    ]
-  },
 ]
 
-responseMap.map(({intent, responses}) => hears([{intent: intent, confidence: 0.5}], responses))
+responseMap.map(({intent, responses}) => hears([intent], responses))

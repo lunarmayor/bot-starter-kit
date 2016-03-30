@@ -4,9 +4,9 @@
   "description": "botkit starter kit",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon bot/index.js --exec babel-node",
-    "build": "babel bot -d dist",
-    "serve": "node dist/index.js"
+    "prestart": "babel bot -d dist",
+    "start": "node dist/index.js",
+    "dev": "nodemon bot/index.js --exec babel-node"
   },
   "author": "Michael Morrissey",
   "license": "ISC",
@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "beepboop-botkit": "1.0.0",
-    "botkit": "howdyai/botkit#experimental",
+    "botkit": "0.0.14",
+    "botkit-middleware-witai": "0.0.2",
     "botkit-storage-redis": "^1.0.1",
     "dotenv": "^2.0.0",
     "node-wit": "^2.0.0",
