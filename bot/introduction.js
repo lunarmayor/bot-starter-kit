@@ -1,19 +1,19 @@
 import controller from './controller'
 
 controller
-  .on('create_bot', (bot, config) => {
-    bot.startPrivateConversation({ user: config.createdBy }, (err, convo) => {
-      convo.say('Hi!')
-      convo.say('/invite me to a channel so I can get to work!!')
-    })
-
+  .on('bot_channel_join', (bot, message) => {
+    console.log(bot, message)
     syncUsers(bot)
   })
   .on('create_user', (bot, user) => {
-    controller.storage.users.save(user)
+    syncUsers(bot)
   })
   .on('update_user', (bot, user) => {
-    controller.storage.users.save(user)
+    syncUsers(bot)
+  })
+  .on('update_team', (bot, team) => {
+    syncUsers(bot)
+    controller.storage.teams.save(team)
   })
 
 const syncUsers = (bot) => {
