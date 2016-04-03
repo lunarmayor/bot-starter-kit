@@ -22,6 +22,7 @@
     "botkit-middleware-witai": "0.0.2",
     "botkit-storage-redis": "^1.0.1",
     "dotenv": "^2.0.0",
+    "lodash": "^4.7.0",
     "node-wit": "^2.0.0",
     "wit-node": "0.0.5"
   }

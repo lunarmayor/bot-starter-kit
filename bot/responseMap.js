@@ -13,8 +13,7 @@ const responseMap = [
       'hello :heart:!',
       'oh hey...',
       ':heart::heart::heart:',
-      'hello [name]!',
-      '[name]!!!!!'
+      'hello!',
     ],
   },
   {
